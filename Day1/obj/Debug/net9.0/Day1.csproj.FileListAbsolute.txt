@@ -12,3 +12,4 @@ D:\C#\Day1\obj\Debug\net9.0\refint\Day1.dll
 D:\C#\Day1\obj\Debug\net9.0\Day1.pdb
 D:\C#\Day1\obj\Debug\net9.0\Day1.genruntimeconfig.cache
 D:\C#\Day1\obj\Debug\net9.0\ref\Day1.dll
+D:\C#\Day1\obj\Debug\net9.0\Day1.sourcelink.json

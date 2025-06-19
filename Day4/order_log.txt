@@ -1,0 +1,10 @@
+[2025-06-19 11:30:33] Đơn #1001 - Đã tạo → Đang chuẩn bị - Khách: Nguyễn Văn C
+[2025-06-19 11:30:34] Đơn #1001 - Đang chuẩn bị → Sẵn sàng - Khách: Nguyễn Văn C
+[2025-06-19 11:30:35] Đơn #1001 - Sẵn sàng → Đang giao - Khách: Nguyễn Văn C
+[2025-06-19 11:30:36] Đơn #1001 - Đang giao → Hoàn tất - Khách: Nguyễn Văn C
+[2025-06-19 11:30:36] Đơn #1002 - Đã tạo → Đang chuẩn bị - Khách: Trần Thị D
+[2025-06-19 11:30:37] Đơn #1002 - Đang chuẩn bị → Sẵn sàng - Khách: Trần Thị D
+[2025-06-19 11:30:38] Đơn #1002 - Sẵn sàng → Đang giao - Khách: Trần Thị D
+[2025-06-19 11:30:39] Đơn #1002 - Đang giao → Giao thất bại - Khách: Trần Thị D
+[2025-06-19 11:30:39] Đơn #1003 - Đã tạo → Đang chuẩn bị - Khách: Lê Văn E
+[2025-06-19 11:30:40] Đơn #1003 - Đang chuẩn bị → Hủy - Khách: Lê Văn E

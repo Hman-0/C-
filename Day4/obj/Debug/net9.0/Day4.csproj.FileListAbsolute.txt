@@ -1,0 +1,15 @@
+D:\C#\Day4\bin\Debug\net9.0\Day4.exe
+D:\C#\Day4\bin\Debug\net9.0\Day4.deps.json
+D:\C#\Day4\bin\Debug\net9.0\Day4.runtimeconfig.json
+D:\C#\Day4\bin\Debug\net9.0\Day4.dll
+D:\C#\Day4\bin\Debug\net9.0\Day4.pdb
+D:\C#\Day4\obj\Debug\net9.0\Day4.GeneratedMSBuildEditorConfig.editorconfig
+D:\C#\Day4\obj\Debug\net9.0\Day4.AssemblyInfoInputs.cache
+D:\C#\Day4\obj\Debug\net9.0\Day4.AssemblyInfo.cs
+D:\C#\Day4\obj\Debug\net9.0\Day4.csproj.CoreCompileInputs.cache
+D:\C#\Day4\obj\Debug\net9.0\Day4.sourcelink.json
+D:\C#\Day4\obj\Debug\net9.0\Day4.dll
+D:\C#\Day4\obj\Debug\net9.0\refint\Day4.dll
+D:\C#\Day4\obj\Debug\net9.0\Day4.pdb
+D:\C#\Day4\obj\Debug\net9.0\Day4.genruntimeconfig.cache
+D:\C#\Day4\obj\Debug\net9.0\ref\Day4.dll
