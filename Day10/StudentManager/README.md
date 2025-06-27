@@ -1,182 +1,182 @@
-# 🎓 Hệ Thống Quản Lý Sinh Viên
+# Student Manager - Ứng dụng Quản lý Sinh viên & Đơn hàng
 
 ## Mô tả
-Ứng dụng console quản lý sinh viên được xây dựng bằng C# và Entity Framework Core, thực hiện yêu cầu 3 trong dự án mini tổng hợp ôn tập cuối khóa.
+Ứng dụng desktop quản lý sinh viên và đơn hàng được xây dựng bằng WPF với kiến trúc MVVM và Entity Framework Core.
+
+## Công nghệ sử dụng
+- **Framework**: .NET 9.0
+- **UI**: WPF (Windows Presentation Foundation)
+- **Pattern**: MVVM (Model-View-ViewModel)
+- **ORM**: Entity Framework Core
+- **Database**: SQL Server LocalDB
+- **MVVM Toolkit**: CommunityToolkit.Mvvm
+- **Export**: iTextSharp (PDF), CSV
 
 ## Tính năng chính
 
-### 📋 Quản lý sinh viên
-- ✅ **CRUD Operations**: Thêm, xem, sửa, xóa sinh viên
-- 🔍 **Tìm kiếm**: Tìm kiếm theo tên, mã sinh viên, lớp
-- 🏫 **Lọc theo lớp**: Xem danh sách sinh viên theo từng lớp
-- ✏️ **Validation**: Kiểm tra dữ liệu đầu vào với Data Annotations
+### 1. Quản lý Sinh viên
+- ✅ **CRUD Operations**: Thêm, sửa, xóa, xem danh sách sinh viên
+- ✅ **Validation**: Kiểm tra dữ liệu đầu vào với Data Annotations
+- ✅ **Tìm kiếm**: Tìm kiếm theo tên, mã sinh viên, email
+- ✅ **Lọc**: Lọc sinh viên theo lớp
+- ✅ **Export**: Xuất danh sách ra file PDF và CSV
 
-### 📊 Báo cáo và thống kê
-- 📈 **Thống kê tổng quan**: Tổng số sinh viên, GPA trung bình
-- 📋 **Thống kê theo lớp**: Số lượng sinh viên và GPA trung bình mỗi lớp
-- 🎯 **Phân bố GPA**: Thống kê theo xếp loại học lực
+### 2. Quản lý Đơn hàng
+- ✅ **CRUD Operations**: Thêm, sửa, xóa, xem danh sách đơn hàng
+- ✅ **Relationship**: Liên kết đơn hàng với sinh viên
+- ✅ **Tính toán**: Tự động tính thành tiền (số lượng × đơn giá)
+- ✅ **Báo cáo**: Xuất báo cáo đơn hàng theo sinh viên ra PDF
 
-### 📄 Xuất dữ liệu
-- 📄 **Xuất PDF**: Tạo báo cáo PDF với định dạng đẹp
-- 📊 **Xuất CSV**: Xuất dữ liệu ra file CSV để xử lý trong Excel
-- 📋 **Xuất cả hai**: Tùy chọn xuất đồng thời PDF và CSV
+### 3. Giao diện người dùng
+- ✅ **Modern UI**: Giao diện hiện đại, thân thiện
+- ✅ **Responsive**: Tự động điều chỉnh kích thước
+- ✅ **Data Binding**: Liên kết dữ liệu hai chiều
+- ✅ **Tab Navigation**: Điều hướng bằng tab
 
-## Công nghệ sử dụng
-
-- **Framework**: .NET 9.0
-- **Database**: SQLite với Entity Framework Core 8.0
-- **UI**: Console Application với ConsoleTables
-- **PDF Export**: iTextSharp
-- **CSV Export**: CsvHelper
-- **Validation**: Data Annotations
+### 4. Báo cáo & Export
+- ✅ **PDF Export**: Xuất danh sách sinh viên và báo cáo đơn hàng
+- ✅ **CSV Export**: Xuất danh sách sinh viên
+- ✅ **Formatting**: Định dạng chuyên nghiệp với header, footer
 
 ## Cấu trúc dự án
 
 ```
 StudentManager/
 ├── Models/
-│   └── Student.cs              # Entity model
+│   ├── Student.cs          # Model sinh viên
+│   └── Order.cs            # Model đơn hàng
 ├── Data/
-│   └── StudentContext.cs       # DbContext
+│   └── StudentDbContext.cs # Entity Framework DbContext
+├── ViewModels/
+│   ├── BaseViewModel.cs    # Base class cho ViewModel
+│   └── MainViewModel.cs    # ViewModel chính
+├── Views/
+│   ├── MainWindow.xaml     # Giao diện chính
+│   └── MainWindow.xaml.cs  # Code-behind
 ├── Services/
-│   ├── StudentService.cs       # Business logic
-│   └── ExportService.cs        # Export functionality
-├── Program.cs                  # Main application
-├── StudentManager.csproj       # Project file
-└── README.md                   # Documentation
+│   └── ReportService.cs    # Service xuất báo cáo
+├── App.xaml                # Application resources
+├── App.xaml.cs             # Application startup
+└── Program.cs              # Entry point
 ```
 
-## Cài đặt và chạy
+## Cài đặt và chạy ứng dụng
 
 ### Yêu cầu hệ thống
-- .NET 9.0 SDK
-- Windows/Linux/macOS
+- Windows 10/11
+- .NET 9.0 Runtime
+- SQL Server LocalDB (thường có sẵn với Visual Studio)
 
-### Các bước chạy ứng dụng
+### Hướng dẫn cài đặt
 
-1. **Clone hoặc tải về dự án**
-2. **Restore packages**:
+1. **Clone hoặc tải về source code**
+
+2. **Restore packages**
    ```bash
    dotnet restore
    ```
 
-3. **Chạy ứng dụng**:
+3. **Build ứng dụng**
+   ```bash
+   dotnet build
+   ```
+
+4. **Chạy ứng dụng**
    ```bash
    dotnet run
    ```
 
-4. **Database**: SQLite database sẽ được tự động tạo khi chạy lần đầu
+### Cấu hình Database
+
+Ứng dụng sử dụng SQL Server LocalDB với connection string:
+```
+Server=(localdb)\mssqllocaldb;Database=StudentManagerDb;Trusted_Connection=true;MultipleActiveResultSets=true
+```
+
+Database sẽ được tự động tạo khi chạy ứng dụng lần đầu với dữ liệu mẫu.
 
 ## Hướng dẫn sử dụng
 
-### Menu chính
-Khi khởi động, ứng dụng sẽ hiển thị menu với các tùy chọn:
+### 1. Quản lý Sinh viên
+- **Thêm sinh viên**: Điền thông tin vào form bên phải và nhấn "Thêm"
+- **Sửa sinh viên**: Chọn sinh viên trong danh sách, sửa thông tin và nhấn "Cập nhật"
+- **Xóa sinh viên**: Chọn sinh viên và nhấn "Xóa"
+- **Tìm kiếm**: Nhập từ khóa vào ô tìm kiếm
+- **Lọc theo lớp**: Chọn lớp trong dropdown
 
-```
-📋 MENU CHÍNH
-═══════════════════════════════════════
-1. 📖 Xem danh sách sinh viên
-2. ➕ Thêm sinh viên mới
-3. ✏️ Cập nhật thông tin sinh viên
-4. 🗑️ Xóa sinh viên
-5. 🔍 Tìm kiếm sinh viên
-6. 🏫 Xem sinh viên theo lớp
-7. 📊 Thống kê
-8. 📄 Xuất dữ liệu (PDF/CSV)
-0. 🚪 Thoát
-```
+### 2. Quản lý Đơn hàng
+- **Xem đơn hàng**: Chọn sinh viên ở tab "Quản lý Sinh viên" trước
+- **Thêm đơn hàng**: Chuyển sang tab "Quản lý Đơn hàng", điền form và nhấn "Thêm"
+- **Sửa/Xóa**: Tương tự như quản lý sinh viên
 
-### Thêm sinh viên mới
-- Nhập đầy đủ thông tin: họ tên, mã SV, email, lớp, GPA, ngày sinh
-- Hệ thống sẽ validate dữ liệu và kiểm tra trùng lặp
-- Mã sinh viên và email phải là duy nhất
-
-### Tìm kiếm
-- Có thể tìm theo tên, mã sinh viên, hoặc lớp
-- Kết quả hiển thị dưới dạng bảng
-
-### Xuất dữ liệu
-- File được lưu trong thư mục `Exports/`
-- Tên file có timestamp để tránh trùng lặp
-- PDF: Định dạng báo cáo chuyên nghiệp
-- CSV: Tương thích với Excel, có BOM UTF-8
+### 3. Xuất báo cáo
+- **PDF/CSV sinh viên**: Nhấn nút "Xuất PDF" hoặc "Xuất CSV" ở tab sinh viên
+- **Báo cáo đơn hàng**: Chọn sinh viên và nhấn "Báo cáo PDF" ở tab đơn hàng
+- File sẽ được lưu trên Desktop
 
 ## Validation Rules
 
-- **Họ tên**: Bắt buộc, tối đa 100 ký tự
+### Sinh viên
+- **Tên**: Bắt buộc, tối đa 100 ký tự
 - **Mã sinh viên**: Bắt buộc, tối đa 20 ký tự, duy nhất
 - **Email**: Bắt buộc, định dạng email hợp lệ, duy nhất
-- **Lớp**: Bắt buộc, tối đa 50 ký tự
-- **GPA**: Từ 0 đến 10
 - **Số điện thoại**: Tùy chọn, định dạng số điện thoại
+- **Lớp**: Bắt buộc, tối đa 50 ký tự
+- **Điểm**: Tùy chọn, từ 0 đến 10
 
-## Kiến thức được ôn tập
+### Đơn hàng
+- **Mã đơn hàng**: Bắt buộc, tối đa 50 ký tự, duy nhất
+- **Tên sản phẩm**: Bắt buộc, tối đa 200 ký tự
+- **Số lượng**: Bắt buộc, lớn hơn 0
+- **Đơn giá**: Bắt buộc, lớn hơn 0
+- **Mô tả**: Tùy chọn, tối đa 500 ký tự
 
-### Entity Framework Core
-- ✅ Code First approach
-- ✅ DbContext configuration
-- ✅ Entity relationships
-- ✅ Database migrations
-- ✅ LINQ queries
+## Kiến trúc MVVM
 
-### CRUD Operations
-- ✅ Create: Thêm sinh viên mới
-- ✅ Read: Xem danh sách, tìm kiếm
-- ✅ Update: Cập nhật thông tin
-- ✅ Delete: Xóa sinh viên
+### Model
+- `Student`: Thực thể sinh viên với validation attributes
+- `Order`: Thực thể đơn hàng với relationship
 
-### Data Validation
-- ✅ Data Annotations
-- ✅ Custom validation logic
-- ✅ Error handling
+### View
+- `MainWindow.xaml`: Giao diện chính với data binding
+- Sử dụng TabControl cho navigation
+- DataGrid cho hiển thị danh sách
+- Form controls cho input
 
-### LINQ & DateTime
-- ✅ Filtering và searching
-- ✅ Grouping và aggregation
-- ✅ DateTime operations
-- ✅ Statistical calculations
+### ViewModel
+- `BaseViewModel`: Base class với INotifyPropertyChanged
+- `MainViewModel`: Logic nghiệp vụ chính
+- Commands cho các action
+- ObservableCollection cho data binding
 
-### Console UI
-- ✅ Menu-driven interface
-- ✅ Table formatting với ConsoleTables
-- ✅ User input validation
-- ✅ Error messaging
+## Mở rộng
 
-### File Operations
-- ✅ PDF generation
-- ✅ CSV export
-- ✅ Directory management
-
-## Mở rộng có thể thực hiện
-
-1. **Thêm entity mới**: Khoa, Môn học, Điểm số
-2. **Authentication**: Đăng nhập cho admin
-3. **Import data**: Nhập từ file Excel/CSV
-4. **Advanced reporting**: Biểu đồ, charts
-5. **Web interface**: Chuyển sang ASP.NET Core
-6. **API endpoints**: RESTful API
+Ứng dụng có thể được mở rộng với:
+- **Authentication**: Đăng nhập, phân quyền
+- **More Reports**: Thêm các loại báo cáo khác
+- **Import**: Nhập dữ liệu từ Excel/CSV
+- **Backup/Restore**: Sao lưu và khôi phục dữ liệu
+- **Multi-language**: Hỗ trợ đa ngôn ngữ
+- **Themes**: Thay đổi giao diện
 
 ## Troubleshooting
 
-### Lỗi thường gặp
+### Lỗi kết nối Database
+- Kiểm tra SQL Server LocalDB đã được cài đặt
+- Thử thay đổi connection string trong `StudentDbContext.cs`
 
-1. **Package restore failed**:
-   ```bash
-   dotnet clean
-   dotnet restore
-   ```
+### Lỗi Export PDF
+- Kiểm tra quyền ghi file trên Desktop
+- Đảm bảo không có file cùng tên đang mở
 
-2. **Database connection error**:
-   - Kiểm tra quyền ghi file trong thư mục dự án
-   - Database SQLite sẽ được tạo tự động
-
-3. **Export file error**:
-   - Đảm bảo thư mục `Exports/` có quyền ghi
-   - Đóng file PDF/CSV nếu đang mở
+### Lỗi Validation
+- Kiểm tra dữ liệu đầu vào theo rules đã định
+- Xem thông báo lỗi chi tiết trong MessageBox
 
 ## Tác giả
-Dự án được phát triển như một phần của khóa học C# - Yêu cầu 3: Ứng dụng desktop quản lý sinh viên.
-
----
-
-**Lưu ý**: Đây là ứng dụng demo cho mục đích học tập. Trong môi trường production, cần bổ sung thêm các tính năng bảo mật và tối ưu hóa hiệu suất.
+Ứng dụng được phát triển để thực hành:
+- WPF UI Development
+- MVVM Pattern
+- Entity Framework Core
+- Data Validation
+- Report Generation

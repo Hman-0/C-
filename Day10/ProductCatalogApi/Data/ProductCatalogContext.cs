@@ -18,11 +18,13 @@ namespace ProductCatalogApi.Data
                 entity.Property(e => e.Category).IsRequired().HasMaxLength(50);
                 entity.Property(e => e.Price).HasColumnType("decimal(18,2)");
                 entity.Property(e => e.Description).HasMaxLength(500);
-                entity.Property(e => e.CreatedAt).HasDefaultValueSql("CURRENT_TIMESTAMP");
+                entity.Property(e => e.CreatedAt).HasColumnType("datetime(6)");
                 entity.HasIndex(e => e.Name);
                 entity.HasIndex(e => e.Category);
                 entity.HasIndex(e => e.Price);
             });
+
+
         }
     }
 
@@ -46,7 +48,7 @@ namespace ProductCatalogApi.Data
         [StringLength(500)]
         public string? Description { get; set; }
         
-        public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
+        public DateTime CreatedAt { get; set; } = DateTime.Today;
         
         public DateTime? UpdatedAt { get; set; }
     }

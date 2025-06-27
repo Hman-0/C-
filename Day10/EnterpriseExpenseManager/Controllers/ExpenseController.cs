@@ -6,6 +6,7 @@ namespace EnterpriseExpenseManager.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
+    [Produces("application/json")]
     public class ExpenseController : ControllerBase
     {
         private readonly IExpenseService _service;
