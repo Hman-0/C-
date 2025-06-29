@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\C#\\Day3\\Day3.csproj",
+      "projectUniqueName": "D:\\C-\\Day3\\Day3.csproj",
       "projectName": "Day3",
-      "projectPath": "D:\\C#\\Day3\\Day3.csproj",
+      "projectPath": "D:\\C-\\Day3\\Day3.csproj",
       "packagesPath": "C:\\Users\\ADMIN\\.nuget\\packages\\",
-      "outputPath": "D:\\C#\\Day3\\obj\\",
+      "outputPath": "D:\\C-\\Day3\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\ADMIN\\AppData\\Roaming\\NuGet\\NuGet.Config"
